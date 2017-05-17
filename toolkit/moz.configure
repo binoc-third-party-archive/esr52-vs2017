@@ -511,7 +511,7 @@ project_flag('MOZ_ANDROID_HISTORY',
 
 option(env='MOZ_PHOTON_ANIMATIONS',
        help='Enable Photon UI animations',
-       default=is_nightly)
+       default=milestone.is_nightly)
 
 @depends('MOZ_PHOTON_ANIMATIONS')
 def photon_animations(value):
