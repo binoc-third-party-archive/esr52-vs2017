@@ -99,7 +99,10 @@ if CONFIG['MOZ_WEBRTC_SIGNALING']:
         if CONFIG['CLANG_CL']:
             CXXFLAGS += ['-Wno-invalid-source-encoding']
         else:
-            CXXFLAGS += ['-validate-charset-']
+            CXXFLAGS += [
+                '-validate-charset-',
+                '-wd5038', # C5038 initializer list order warnings
+            ]
 
 if CONFIG['MOZ_WIDGET_TOOLKIT'] != 'gonk':
     GYP_DIRS += ['trunk/testing']
