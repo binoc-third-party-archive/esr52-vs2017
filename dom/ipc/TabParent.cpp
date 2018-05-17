@@ -2170,7 +2170,7 @@ TabParent::RecvSetPluginFocused(const bool& aFocused)
   return true;
 }
 
- bool
+bool
 TabParent::RecvSetCandidateWindowForPlugin(
              const CandidateWindowPosition& aPosition)
 {
@@ -2180,6 +2180,17 @@ TabParent::RecvSetCandidateWindowForPlugin(
   }
 
   widget->SetCandidateWindowForPlugin(aPosition);
+  return true;
+}
+
+bool
+TabParent::RecvEnableIMEForPlugin(const bool& aEnable)
+{
+  nsCOMPtr<nsIWidget> widget = GetWidget();
+  if (!widget) {
+    return true;
+  }
+  widget->EnableIMEForPlugin(aEnable);
   return true;
 }
 
