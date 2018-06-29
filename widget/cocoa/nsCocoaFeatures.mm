@@ -20,6 +20,7 @@
 #define MAC_OS_X_VERSION_10_11_HEX 0x000010B0
 #define MAC_OS_X_VERSION_10_12_HEX 0x000010C0
 #define MAC_OS_X_VERSION_10_13_HEX 0x000010D0
+#define MAC_OS_X_VERSION_10_14_HEX 0x000010E0
 
 #include "nsCocoaFeatures.h"
 #include "nsCocoaUtils.h"
@@ -172,6 +173,12 @@ nsCocoaFeatures::OnSierraOrLater()
 nsCocoaFeatures::OnHighSierraOrLater()
 {
     return (OSXVersion() >= MAC_OS_X_VERSION_10_13_HEX);
+}
+
+/* static */ bool
+nsCocoaFeatures::OnMojaveOrLater()
+{
+    return (OSXVersion() >= MAC_OS_X_VERSION_10_14_HEX);
 }
 
 /* static */ bool
