@@ -734,6 +734,26 @@ def compiler(language, host_or_target, c_compiler=None, other_compiler=None,
                     'See https://developer.mozilla.org/en/'
                     'Windows_Build_Prerequisites' % info.version)
 
+            if info.version >= '19.10.0' and info.version < '19.13.26128':
+                raise FatalCheckError(
+                    'This version (%s) of the MSVC compiler is not '
+                    'supported.\n'
+                    'You must install Visual C++ 2017 Update 6 or '
+                    'Update 8 or later in order to build.\n'
+                    'See https://developer.mozilla.org/en/'
+                    'Windows_Build_Prerequisites' % info.version)
+
+            # MSVC version 15.7 and the previews for 15.8, at least,
+            # can't build Firefox.
+            if info.version >= '19.14.0' and info.version < '19.15.26720':
+                raise FatalCheckError(
+                    'This version (%s) of the MSVC compiler is not '
+                    'supported due to compiler bugs.\n'
+                    'You must install Visual C++ 2017 Update 6 or '
+                    'Update 8 or later in order to build.\n'
+                    'See https://developer.mozilla.org/en/'
+                    'Windows_Build_Prerequisites' % info.version)
+
         return namespace(
             wrapper=wrapper,
             compiler=compiler,
