@@ -19244,6 +19244,10 @@
         "url": "/html/infrastructure/urls/terminology-0/multiple-base.sub.html"
       },
       {
+        "path": "html/input/the-disabled-attribute/number-disabled.html",
+        "url": "/html/input/the-disabled-attribute/number-disabled.html"
+      },
+      {
         "path": "html/obsolete/requirements-for-implementations/other-elements-attributes-and-apis/document-all.html",
         "url": "/html/obsolete/requirements-for-implementations/other-elements-attributes-and-apis/document-all.html"
       },
