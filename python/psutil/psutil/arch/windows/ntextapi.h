@@ -186,7 +186,7 @@ typedef enum _PROCESSINFOCLASS2 {
     ProcessTimes,
     ProcessBasePriority,
     ProcessRaisePriority,
-    ProcessDebugPort,
+    _ProcessDebugPort,
     ProcessExceptionPort,
     ProcessAccessToken,
     ProcessLdtInformation,
@@ -207,9 +207,9 @@ typedef enum _PROCESSINFOCLASS2 {
     ProcessForegroundInformation,
     _ProcessWow64Information,
     /* added after XP+ */
-    ProcessImageFileName,
+    _ProcessImageFileName,
     ProcessLUIDDeviceMapsEnabled,
-    ProcessBreakOnTermination,
+    _ProcessBreakOnTermination,
     ProcessDebugObjectHandle,
     ProcessDebugFlags,
     ProcessHandleTracing,
@@ -223,6 +223,9 @@ typedef enum _PROCESSINFOCLASS2 {
 
 #define PROCESSINFOCLASS PROCESSINFOCLASS2
 #define ProcessBasicInformation _ProcessBasicInformation
+#define ProcessDebugPort _ProcessDebugPort
+#define ProcessImageFileName _ProcessImageFileName
+#define ProcessBreakOnTermination _ProcessBreakOnTermination
 #define ProcessWow64Information _ProcessWow64Information
 
 #endif // __NTEXTAPI_H__
